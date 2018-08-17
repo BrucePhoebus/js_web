@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>认识DOM-style样式</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    /**
+     * 网页尺寸offsetHeight
+        offsetHeight和offsetWidth，获取网页内容高度和宽度(包括滚动条等边线，会随窗口的显示大小改变)。
+     一、值
+         offsetHeight = clientHeight + 滚动条 + 边框。
+     二、浏览器兼容性
+         var w= document.documentElement.offsetWidth
+         || document.body.offsetWidth;
+         var h= document.documentElement.offsetHeight
+         || document.body.offsetHeight;
+     * @type {NodeListOf<HTMLElement>}
+     */
+    document.write("网页的实际宽度为：" + document.documentElement.offsetWidth || document.body.offsetWidth + "px<br/>");
+    document.write("<br/>");
+    document.write("网页的实际高度为：" + document.documentElement.offsetHeight || document.body.offsetHeight + "px");
+
+</script>
+</body>
+</html>

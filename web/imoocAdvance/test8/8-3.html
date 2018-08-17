@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>window对象-定时器</title>
+    <script type="text/javascript">
+        /**
+         * JavaScript 计时器
+         * 计时器setInterval()
+         */
+        var int = setInterval(clock, 100);
+
+        function clock() {
+            var time = new Date();
+            document.getElementById("clock").value = time;
+        }
+
+        var attime;
+
+        function clock2() {
+            var time = new Date();
+            attime = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+            document.getElementById("clock2").value = attime;
+        }
+        setInterval(clock2,1000);
+    </script>
+</head>
+<body>
+<form>
+    <input type="text" id="clock" size="50"/>
+</form>
+<form>
+    <input type="text" id="clock2" size="50"  />
+</form>
+</body>
+</html>

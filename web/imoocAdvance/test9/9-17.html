@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>认识DOM-style样式</title>
+</head>
+<style type="text/css">
+    .message {
+        width: 200px;
+        height: 100px;
+        background-color: #CCC;
+    }
+</style>
+<body>
+
+<script type="text/javascript">
+    /**
+     * 创建文本节点createTextNode
+     * createTextNode() 方法创建新的文本节点，返回新创建的 Text 节点
+     * @type {NodeListOf<HTMLElement>}
+     */
+    var element = document.createElement("p");
+    element.className = "message";
+    var textNode = document.createTextNode("I love JavaScript!");
+    element.appendChild(textNode);
+    document.body.appendChild(element);
+</script>
+</body>
+</html>

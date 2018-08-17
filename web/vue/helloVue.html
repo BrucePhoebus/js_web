@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--引入vue-->
+<script src="https://unpkg.com/vue"></script>
+<body>
+
+<div id="app">
+    {{ message }}
+</div>
+
+</body>
+<script>
+    //挂载vue
+    /*构造器
+    每个vue.js通过vue创建实例*/
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!'
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>window对象-计时器</title>
+    <script type="text/javascript">
+        /**
+         * JavaScript 计时器
+         * 取消计时器clearInterval()
+         */
+        /*function clock() {
+            var time = new Date();
+            document.getElementById("clock").value = time;
+        }*/
+
+        // 每隔100毫秒调用clock函数，并将返回值赋值给i
+        // var i = setInterval("clock()", 100);
+
+        function clock2() {
+            var time = new Date();
+            document.getElementById("clock2").value = time;
+        }
+
+        var i = setInterval("clock2", 100);
+    </script>
+</head>
+<body>
+<!--<form>
+    <input type="text" id="clock" size="50"/>
+    <input type="button" value="Stop" onclick="clearInterval(i)"/>
+</form>-->
+<form>
+    <input type="text" id="clock2" size="50"/>
+    <input type="button" value="Stop" onclick="clearInterval(i)"/>
+</form>
+</body>
+</html>

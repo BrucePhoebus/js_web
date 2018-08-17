@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>认识DOM-style样式</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    /**
+     * 网页尺寸scrollHeight
+        scrollHeight和scrollWidth，获取网页内容高度和宽度。
+     一、针对IE、Opera:
+        scrollHeight 是网页内容实际高度，可以小于 clientHeight。
+     二、针对NS、FF:
+        scrollHeight 是网页内容高度，不过最小值是 clientHeight。
+        也就是说网页内容实际高度小于 clientHeight 时，scrollHeight 返回 clientHeight 。
+     三、浏览器兼容性
+         var w=document.documentElement.scrollWidth
+         || document.body.scrollWidth;
+         var h=document.documentElement.scrollHeight
+         || document.body.scrollHeight
+     * @type {NodeListOf<HTMLElement>}
+     */
+    document.write("网页的实际宽度为：" + document.documentElement.scrollWidth || document.body.scrollWidth + "px<br/>");
+    document.write("<br/>");
+    document.write("网页的实际高度为：" + document.documentElement.scrollHeight || document.body.scrollHeight + "px");
+
+</script>
+</body>
+</html>

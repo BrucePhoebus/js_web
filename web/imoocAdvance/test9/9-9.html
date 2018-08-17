@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>认识DOM-style样式</title>
+
+</head>
+<body>
+<div id="con">
+    <p>javascript</p>
+    <div>jQuery</div>
+    <h5>PHP</h5>
+</div>
+<script type="text/javascript">
+    /**
+     * 访问子节点的第一和最后项
+     * 一、firstChild 属性返回‘childNodes’数组的第一个子节点。如果选定的节点没有子节点，则该属性返回 NULL
+     * 二、lastChild 属性返回‘childNodes’数组的最后一个子节点。如果选定的节点没有子节点，则该属性返回 NULL
+     * @type {NodeListOf<HTMLElement>}
+     */
+    var x=document.getElementById("con");
+    document.write(x.firstChild.nodeName+"<br/>");
+    document.write(x.lastChild.nodeName+"<br/>");
+
+</script>
+</body>
+</html>

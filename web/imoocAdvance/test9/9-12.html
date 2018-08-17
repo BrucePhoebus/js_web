@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>认识DOM-style样式</title>
+</head>
+<body>
+<ul id="test">
+    <li>JavaScript</li>
+    <li>HTML</li>
+</ul>
+<!--<div id="test">
+    <p id="p">HTML</p>
+    <p>JavaScript</p>
+</div>-->
+
+<script type="text/javascript">
+    /**
+     * 插入节点appendChild()
+     * 在指定节点的最后一个子节点列表之后添加一个新的子节点。
+     * @type {NodeListOf<HTMLElement>}
+     */
+    var otest = document.getElementById("test");
+    var newNode = document.createElement("li");
+    newNode.innerHTML = "PHP";
+    otest.appendChild(newNode);
+
+    /*var otest = document.getElementById("test");
+    var newnode = document.createElement("p");
+    newnode.innerHTML = "This IS A NEW P";
+    //appendChild方法添加节点
+    otest.appendChild(newnode);*/
+</script>
+</body>
+</html>

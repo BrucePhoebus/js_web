@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+<p>删除 JSON 对象属性。</p>
+<p id="demo"></p>
+<script>
+    var myObj, i, x = "";
+    myObj = {
+        "name": "runoob",
+        "alexa": 10000,
+        "sites": {
+            "site1": "www.runoob.com",
+            "site2": "m.runoob.com",
+            "site3": "c.runoob.com"
+        }
+    };
+    delete myObj.sites["site1"];
+    for (i in myObj.sites) {
+        x += myObj.sites[i] + "<br>";
+    }
+    document.getElementById("demo").innerHTML = x;
+</script>
+
+<!--<p>使用中括号([])来修改 JSON 对象的值。</p>
+<p id="demo"></p>
+<script>
+    var myObj, i, x = "";
+    myObj = {
+        "name": "runoob",
+        "alexa": 10000,
+        "sites": {
+            "site1": "www.runoob.com",
+            "site2": "m.runoob.com",
+            "site3": "c.runoob.com"
+        }
+    };
+    myObj.sites["site1"] = "www.google.com";
+    for (i in myObj.sites) {
+        x += myObj.sites[i] + "<br/>";
+    }
+    document.getElementById("demo").innerHTML = x;
+</script>-->
+
+<!--<p>访问 JSON 内嵌对象。</p>
+<p id="demo"></p>
+<script>
+    myObj = {
+        "name": "runoob",
+        "alexa": 10000,
+        "sites": {
+            "site1": "www.runoob.com",
+            "site2": "m.runoob.com",
+            "site3": "c.runoob.com"
+        }
+    };
+    document.getElementById("demo").innerHTML += myObj.sites.site1 + "<br/>";
+    // 或者
+    document.getElementById("demo").innerHTML += myObj.sites["site1"];
+</script>-->
+
+<!--<p>在 for-in 循环对象的属性时，使用中括号（[]）来访问属性的值：</p>
+<p id="demo"></p>
+<script>
+    var myObj = {"name": "runoob", "alexa": 10000, "site": null};
+    for (x in myObj) {
+        document.getElementById("demo").innerHTML += myObj[x] + "<br/>";
+    }
+</script>-->
+
+<!--<p>使用 for-in 来循环对象的属性:</p>
+<p id="demo"></p>
+<script>
+    var myObj = {"name": "runoob", "alexa": 10000, "site": null};
+    for (x in myObj) {
+        document.getElementById("demo").innerHTML += x + "<br/>";
+    }
+</script>-->
+
+<!--<p>你也可以使用中括号（[]）来访问 JOSN 对象的值：</p>
+<p id="demo"></p>
+<script>
+    var myObj, x;
+    myObj = myObj = {"name": "runoob", "alexa": 10000, "site": null};
+    x = myObj["name"];
+    document.getElementById("demo").innerHTML = x;
+</script>-->
+
+<!--<p>你可以使用点号（.）来访问 JSON 对象的值：</p>
+<p id="demo"></p>
+<script>
+    var myObj, x;
+    myObj = {"name": "runoob", "alexa": 10000, "site": null};
+    x = myObj.name;
+    document.getElementById("demo").innerHTML = x;
+</script>-->
+
+</body>
+</html>

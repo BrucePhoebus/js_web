@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>window对象-编程练习</title>
+
+</head>
+<body>
+<!--先编写好网页布局-->
+<h4><b>操作成功</b></h4>
+<b id="time">5</b>秒后返回主页&nbsp;<a href="javascript:back();">返回</a>
+<script type="text/javascript">
+    /**
+     * 编程练习
+     制作一个跳转提示页面：
+     */
+        //获取显示秒数的元素，通过定时器来更改秒数。
+        //通过window的location和history对象来控制网页的跳转。
+    var time = document.getElementById("time");
+    var num = 5;
+    var timer = setInterval(function () {
+        num--;
+        time.innerHTML = num;
+        if (num === 1) {
+            window.location.href = "http://www.imooc.com/";
+        }
+    }, 1000);
+
+    /*function getTimes() {
+        var num = 5;
+        document.getElementById("time").innerHTML = num;
+        num--;
+        if (num == 0) {
+            window.location.href("https://www.imooc.com/");
+        }
+    }
+
+    var i = setInterval("getTimes()", 1000);*/
+
+    function back() {
+        window.history.forward();
+    }
+
+</script>
+</body>
+</html>

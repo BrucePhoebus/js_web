@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- 闭包 -->
+<head>
+    <script type="text/javascript">
+        /**
+         *
+         * 闭包域的练习
+         * @returns {f1}
+         */
+        function foo() {
+            var a = 'hello';
+
+            function bar() {
+                var b = 'world';
+                console.log(a);  // => 'hello'
+                console.log(b);  // => 'world'
+            }
+
+            console.log(a);  // => 'hello'
+            console.log(b);  // reference error
+        }
+
+        console.log(a);  // reference error
+        console.log(b);  // reference error
+    </script>
+</head>
+<body>
+    <input type="button" value="点击测试" onclick="foo()" />
+</body>
+</html>

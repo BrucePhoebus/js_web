@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>认识DOM-style样式</title>
+</head>
+<body>
+<div id="content">
+    <h1>html</h1>
+    <h1>php</h1>
+    <h1>javascript</h1>
+    <h1>jquery</h1>
+    <h1>java</h1>
+</div>
+<script type="text/javascript">
+    /**
+     * 删除节点removeChild()
+     * removeChild() 方法从子节点列表中删除某个节点。
+     * 如删除成功，此方法可返回被删除的节点，
+     * 如失败，则返回 NULL。
+     * @type {NodeListOf<HTMLElement>}
+     */
+    function clearText() {
+        var content = document.getElementById("content");
+        // 在此完成该函数
+        var childs = content.childNodes;
+        for (var i = 0; i < childs.length; i++) {
+            if (childs[i].nodeType == 1) {
+                var x =content.removeChild(childs[i]);
+                x = null;
+            }
+            document.write(childs.length + "<br/>")
+        }
+
+    }
+</script>
+
+<button onclick="clearText()">清除节点内容</button>
+<button onclick="recorverText()">恢复节点内容</button>
+</body>
+</html>

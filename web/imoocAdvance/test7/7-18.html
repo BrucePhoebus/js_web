@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Array 数组对象</title>
+    <script type="text/javascript">
+        /**
+         * 数组连接concat()
+         * concat() 方法用于连接两个或多个数组。此方法返回一个新数组，不改变原来的数组。
+         * @type {number}
+         */
+        var mya = new Array(3);
+        mya[0] = "1";
+        mya[1] = "2";
+        mya[2] = "3";
+        document.write(mya.concat(4,5)+"<br/>");
+        document.write(mya + "<br/>");
+
+        var mya1= new Array("hello!");
+        var mya2= new Array("I","love");
+        var mya3= new Array("JavaScript","!");
+        var mya4=mya1.concat(mya2,mya3);
+        document.write(mya4 + "<br/>");
+
+        var myarr1= new Array("010")
+        var myarr2= new Array("-","84697581");
+        var myarr = myarr1.concat(myarr2);
+        document.write(myarr + "<br/>");
+        document.write(myarr1.concat(myarr2) + "<br/>");
+
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>认识DOM-style样式</title>
+
+</head>
+<body>
+<div>
+    javascript
+    <p>javascript</p>
+    <div>jQuery</div>
+    <h5>PHP</h5>
+</div>
+<script type="text/javascript">
+    /**
+     * 访问子节点childNodes
+     * 访问选定元素节点下的所有子节点的列表，返回的值可以看作是一个数组，他具有length属性。
+     * 在script标签内，获取子节点，并输出相应属性。
+     * 1. 获取第一个DIV的子节点。
+     * 2. 使用for遍历每个节点。
+     * 3. 输出相应节点的属性。
+     *
+     * 注：DIV下不止四个节点，还有文本节点
+     * @type {NodeListOf<HTMLElement>}
+     */
+    var childNode = document.getElementsByTagName("div")[0].childNodes;
+    document.write(childNode[0].nodeName + "<br/>");
+    document.write(childNode[0].nodeValue + "<br/>");
+    document.write(childNode[0].nodeType + "<br/>");
+    document.write("---------------------------------");
+    var len = childNode.length;
+    for (var i=0; i<len; i++) {
+        document.write("第" + (i+1) + "个节点名称：" + childNode[i].nodeName + "<br/>");
+        document.write("第" + (i+1) + "个节点值：" + childNode[i].nodeValue + "<br/>");
+        document.write("第" + (i+1) + "个节点类型：" + childNode[i].nodeType + "<br/>");
+    }
+
+</script>
+</body>
+</html>

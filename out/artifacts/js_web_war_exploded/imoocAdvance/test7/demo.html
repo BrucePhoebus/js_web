@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>编程练习</title>
+    <script type="text/javascript">
+        /**
+         * 编程练习
+         * 某班的成绩出来了，现在老师要把班级的成绩打印出来。
+         * 效果图:XXXX年XX月X日 星期X--班级总分为:81
+         * 格式要求：
+         * 1、显示打印的日期。 格式为类似“XXXX年XX月XX日 星期X” 的当前的时间。
+         * 2、计算出该班级的平均分（保留整数）。
+         * 同学成绩数据如下：
+         * "小明:87; 小花:81; 小红:97; 小天:76;小张:74;小小:94;小西:90;小伍:76;小迪:64;小曼:76"
+         * @type {number}
+         */
+            //通过javascript的日期对象来得到当前的日期，并输出。
+        var myDate = new Date();
+        var year = myDate.getFullYear();
+        var month = myDate.getMonth();
+        var day = myDate.getDate();
+        document.write(year + "年" + month + "月" + day + "日" + "&nbsp");
+        //计算当前是星期几
+        var weekDay = ["星期天", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+        //成绩是一长窜的字符串不好处理，找规律后分割放到数组里更好操作
+        var scoreStr = "小明:87;小花:81;小红:97;小天:76;小张:74;小小:94;小西:90;小伍:76;小迪:64;小曼:76";
+        var scors = new Array();
+        var sum = 0;
+        document.write(scoreStr.length + "<br/>");
+        //说明有十组数，十个成绩
+        var len = (scoreStr.length+1) / 6;
+        var num = 0;
+        for (var i = 0; i < len; i++) {
+            //截取每个成绩，转化加起来
+            sum += parseInt(scoreStr.substr(3+num, 2));
+            //跟随规律，每次都跳转到数字的那个下标
+            num += 6;
+        }
+        //从数组中将成绩撮出来，然后求和取整，并输出。
+        document.write(weekDay[myDate.getDay()] + "--班级总分为:" + sum);
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>认识DOM-style样式</title>
+
+</head>
+<body>
+<form>
+    请选择你爱好:<br>
+    <input type="checkbox" name="hobby" id="hobby1"> 音乐
+    <input type="checkbox" name="hobby" id="hobby2"> 登山
+    <input type="checkbox" name="hobby" id="hobby3"> 游泳
+    <input type="checkbox" name="hobby" id="hobby4"> 阅读
+    <input type="checkbox" name="hobby" id="hobby5"> 打球
+    <input type="checkbox" name="hobby" id="hobby6"> 跑步 <br>
+    <input type="button" value="全选" onclick="checkall();">
+    <input type="button" value="全不选" onclick="clearall();">
+    <p>请输入您要选择爱好的序号，序号为1-6:</p>
+    <input id="wb" name="wb" type="text">
+    <input name="ok" type="button" value="确定" onclick="checkone();">
+</form>
+<!--<input type="checkbox" name="hobby" id="hobby1"> 音乐
+<input type="checkbox" name="hobby" id="hobby2"> 登山
+<input type="checkbox" name="hobby" id="hobby3"> 游泳
+<input type="checkbox" name="hobby" id="hobby4"> 阅读
+<input type="checkbox" name="hobby" id="hobby5"> 打球
+<input type="checkbox" name="hobby" id="hobby6"> 跑步
+<input type="button" value="全选" id="button1">
+<input type="button" value="全不选" id="button2">
+1. document.getElementsByTagName("input")，结果为获取所有标签为input的元素，共8个。
+2. document.getElementsByName("hobby")，结果为获取属性name="hobby"的元素，共6个。
+3. document.getElementById("hobby6")，结果为获取属性id="hobby6"的元素，只有一个，"跑步"这个复选项。-->
+<script type="text/javascript">
+    /**
+     * 区别getElementByID,getElementsByName,getElementsByTagName
+     * @type {NodeListOf<HTMLElement>}
+     */
+    function checkall() {
+        var hobby = document.getElementsByTagName("input");
+        // 任务1:实现当点击"全选"按钮时，将选中所有的复选项
+        var len = hobby.length;
+        for (var i = 0; i < len; i++) {
+            if (hobby[i].type == "checkbox") {
+                hobby[i].checked = true;
+            }
+        }
+    }
+
+    function clearall() {
+        var hobby = document.getElementsByName("hobby");
+        // 任务2:实现当点击"全不选"按钮时，将取消所有选中的复选项
+        var len = hobby.length;
+        for (var i = 0; i < len; i++) {
+            if (hobby[i].type == "checkbox") {
+                hobby[i].checked = false;
+            }
+        }
+    }
+
+    function checkone() {
+        var j = document.getElementById("wb").value;
+        // 任务3:在文本框中输入输入1-6数值，当点击"确定"按钮时，根据输入的数值，通过id选中相应的复选项
+        var hobby = document.getElementsByName("hobby");
+        if (j >= 1 && j <= 6) {  //要求在input内输入的必须是1－6之间的数字
+            for (var i = 0; i < hobby.length; i++) {
+                if (i == (j - 1)) {
+                    hobby[i].checked = true;
+                } else {
+                    hobby[i].checked = false;
+                }
+            }
+        } else {
+            alert("序号为1-6!");
+
+        }
+
+    }
+
+</script>
+</body>
+</html>

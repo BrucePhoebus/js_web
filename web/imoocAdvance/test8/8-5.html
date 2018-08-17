@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>window对象-计时器</title>
+    <script type="text/javascript">
+        /**
+         * JavaScript 计时器
+         * 计时器setTimeout()
+         */
+        setTimeout("alert('Hello!')", 3000);
+
+        function tinfo() {
+            var t = setTimeout("alert('Hello!')", 5000);
+        }
+
+        var num = 0;
+        function numCount() {
+            document.getElementById('txt').value = num;
+            num = num + 1;
+            setTimeout("numCount()", 1000);
+        }
+
+        function startCount() {
+            document.getElementById('count').value=num;
+            num=num+1;
+            setTimeout("startCount()",1000);
+        }
+    </script>
+</head>
+<body>
+<form>
+    <input type="button" value="start" onClick="tinfo()">
+</form>
+<form>
+    <input type="text" id="txt"/>
+    <input type="button" value="Start" onClick="numCount()"/>
+</form>
+<form>
+    <input type="text" id="count" onclick="startCount()" />
+</form>
+</body>
+</html>

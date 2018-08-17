@@ -1,0 +1,26 @@
+<!DOCTYPE  HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>数组</title>
+    <script type="text/javascript">
+        function test() {
+            //创建数组
+            var arr = ["*","##", "***", "&&", "****", "##*"];
+            arr[7] = "**";
+            //显示数组长度
+            document.write(arr.length);//8
+            window.alert(arr.length);
+            //将数组内容输出.完成达到的效果。
+            var len = arr.length;
+            for (var i = 0; i < len; i++) {
+                document.write(arr[i] + "<br>");
+            }
+        }
+
+    </script>
+</head>
+<body>
+<input type="button" value="点击调用" onClick="test()"/>
+</body>
+</html>
