@@ -1,37 +1,82 @@
-
 <!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
     <title>实践题 - 选项卡</title>
     <style type="text/css">
-        *{padding:0px;margin: 0px;font:12px normal "microsoft yahei";}
-        #tabs {width:290px;padding:5px;height:150px;margin:20px;}
-        #tabs ul{list-style:none;display: block;height:30px;line-height:30px;border-bottom:2px saddlebrown solid;}
-        #tabs ul li{background:#fff;cursor:pointer;float:left;list-style:none;height:28px;line-height:28px;margin:0px 3px;border:1px solid #aaaaaa;border-bottom:none;display:inline-block;width:60px;text-align: center;}
-        #tabs ul li.on{border-top:2px solid saddlebrown;border-bottom: 2px solid #fff;}
-        #tabs div{height:120px;line-height: 25px;border:1px solid #336699;border-top:none;padding:5px;}
-        .hide{display: none;}
+        * {
+            padding: 0px;
+            margin: 0px;
+            font: 12px normal;
+        }
+
+        #tabs {
+            width: 290px;
+            padding: 5px;
+            height: 150px;
+            margin: 20px;
+        }
+
+        #tabs ul {
+            list-style: none;
+            display: block;
+            height: 30px;
+            line-height: 30px;
+            border-bottom: 2px saddlebrown solid;
+        }
+
+        #tabs ul li {
+            background: #fff;
+            cursor: pointer;
+            float: left;
+            list-style: none;
+            height: 28px;
+            line-height: 28px;
+            margin: 0px 3px;
+            border: 1px solid #aaaaaa;
+            border-bottom: none;
+            display: inline-block;
+            width: 60px;
+            text-align: center;
+        }
+
+        #tabs ul li.on {
+            border-top: 2px solid saddlebrown;
+            border-bottom: 2px solid #fff;
+        }
+
+        #tabs div {
+            height: 120px;
+            line-height: 25px;
+            border: 1px solid #336699;
+            border-top: none;
+            padding: 5px;
+        }
+
+        .hide {
+            display: none;
+        }
     </style>
     <script type="text/javascript">
-         window.onload = function(){
-             var oTab = document.getElementById("tabs");
-             var oUl = oTab.getElementsByTagName("ul")[0];
-             var oLis = oUl.getElementsByTagName("li");
-             var oDivs= oTab.getElementsByTagName("div");
+        window.onload = function () {
+            var oTab = document.getElementById("tabs");
+            var oUl = oTab.getElementsByTagName("ul")[0];
+            var oLis = oUl.getElementsByTagName("li");
+            var oDivs = oTab.getElementsByTagName("div");
 
-             for(var i= 0,len = oLis.length;i<len;i++){
-                 oLis[i].index = i;
-                 oLis[i].onclick = function() {
-                     for(var n= 0;n<len;n++){
-                         oLis[n].className = "";
-                         oDivs[n].className = "hide";
-                     }
-                     this.className = "on";
-                     oDivs[this.index].className = "";
-                 }
-             };
-         }
+            for (var i = 0, len = oLis.length; i < len; i++) {
+                oLis[i].index = i;
+                oLis[i].onclick = function () {
+                    for (var n = 0; n < len; n++) {
+                        oLis[n].className = "";
+                        oDivs[n].className = "hide";
+                    }
+                    this.className = "on";
+                    oDivs[this.index].className = "";
+                }
+            }
+            ;
+        }
     </script>
 
 </head>
