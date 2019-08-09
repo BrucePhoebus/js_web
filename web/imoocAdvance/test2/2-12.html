@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>操作符优先级</title>
+    <script type="text/javascript">
+        var numa, numb, jq1;
+        numa = 5;
+        numb = 2;
+        jq1 = numa + 30 > 10 && numb * 3 < 20;
+        jq11 = numa + 30 > 10;//加减的优先级高过比较级
+        jq111 = numa + true;//6
+        jq12 = numb * 3 < 20;//乘除的优先级高过比较级
+        jq121 = numb * true;//2
+        jq2 = ((numa + 30) / (7 - numb)) * 3
+        document.write("jq1的值是:" + jq1 + "<br>");
+        document.write("jq11的值是:" + jq11 + "<br>");
+        document.write("jq111的值是:" + jq111 + "<br>");
+        document.write("jq12的值是:" + jq12 + "<br>");
+        document.write("jq121的值是:" + jq121 + "<br>");
+        document.write("jq2的值是:" + jq2);
+    </script>
+</head>
+<body>
+</body>
+</html>

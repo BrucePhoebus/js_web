@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<!-- 单例模式 -->
+<head>
+    <script type="text/javascript">
+        var createMask = function(){
+            var mask;
+            return function(){
+                return mask || ( mask = document.body.appendChild( document.createElement('div') ) )
+            }
+        }()
+    </script>
+</head>
+<body>
+<form>
+
+</form>
+</body>
+</html>

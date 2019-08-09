@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>实践题 - 选项卡</title>
+    <style type="text/css">
+        /* CSS样式制作 */
+        .tag {
+            border: 1px solid gray;
+            border-bottom: 2px solid brown;
+            height: 30px;
+            width: 60px;
+            float: left;
+            /*display:inline-block;*/
+            margin: 0px 3px;
+            text-align: center;
+            line-height: 30px;
+            background-Color: white;
+        }
+        #content {
+            position: absolute;
+            top: 39px;
+            border: 1px solid blue;
+            border-top: 2px solid brown;
+            width: 300px;
+            height: 200px;
+            z-index: -1;
+
+        }
+
+        #content > div {
+            margin-left: 5px;
+
+        }
+
+
+    </style>
+
+    <script type="text/javascript">
+        var ctt1 = document.createElement("div");
+        ctt1.setAttribute("id", "房产");
+        ctt1.style.display = "none";
+        var ctt11 = document.createElement("p");
+        ctt11.innerHTML = "275万购昌平邻铁三居 总价20万买一居";
+        ctt1.appendChild(ctt11);
+
+        var ctt12 = document.createElement("p");
+        ctt12.innerHTML = "200万内购五环三居 140万安家东三环";
+        ctt1.appendChild(ctt12);
+
+        var ctt13 = document.createElement("p");
+        ctt13.innerHTML = "北京首现零首付楼盘 53万购东5环50平";
+        ctt1.appendChild(ctt13);
+
+        var ctt14 = document.createElement("p");
+        ctt14.innerHTML = "京楼盘直降5000 中信府 公园楼王现房";
+        ctt1.appendChild(ctt14);
+
+        var ctt2 = document.createElement("div");
+        ctt2.setAttribute("id", "家居");
+        ctt2.style.display = "none";
+        var ctt21 = document.createElement("p");
+        ctt21.innerHTML = "40平出租屋大改造 美少女的混搭小窝";
+        ctt2.appendChild(ctt21);
+
+        var ctt22 = document.createElement("p");
+        ctt22.innerHTML = "经典清新简欧爱家 90平老房焕发新生";
+        ctt2.appendChild(ctt22);
+
+        var ctt23 = document.createElement("p");
+        ctt23.innerHTML = "新中式的酷色温情 66平撞色活泼家居";
+        ctt2.appendChild(ctt23);
+
+        var ctt24 = document.createElement("p");
+        ctt24.innerHTML = "瓷砖就像选好老婆 卫生间烟道的设计";
+        ctt2.appendChild(ctt24);
+
+        var ctt3 = document.createElement("div");
+        ctt3.setAttribute("id", "二手房");
+        ctt3.style.display = "none";
+        var ctt31 = document.createElement("p");
+        ctt31.innerHTML = "通州豪华3居260万 二环稀缺2居250w甩";
+        ctt3.appendChild(ctt31);
+
+        var ctt32 = document.createElement("p");
+        ctt32.innerHTML = "西3环通透2居290万 130万2居限量抢购";
+        ctt3.appendChild(ctt32);
+
+        var ctt33 = document.createElement("p");
+        ctt33.innerHTML = "黄城根小学学区仅260万 121平70万抛!";
+        ctt3.appendChild(ctt33);
+
+        var ctt34 = document.createElement("p");
+        ctt34.innerHTML = "独家别墅280万 苏州桥2居优惠价248万";
+        ctt3.appendChild(ctt34);
+        var last;
+        function init() {
+            var ctt = document.getElementById("content");
+
+            ctt.appendChild(ctt1);
+            ctt.appendChild(ctt2);
+            ctt.appendChild(ctt3);
+
+            var dft = document.getElementById("dft");
+            select(dft);
+            last = dft;
+        }
+
+        // JS实现选项卡切换
+        function tagclick(t) {
+            if (last != null) {
+                unselect(last);
+            }
+            select(t);
+            last = t;
+        }
+        function select(t) {
+            if (t != null) {
+                t.style.borderTop = "2px solid brown";
+                t.style.borderBottom = "2px solid white";
+                document.getElementById(t.innerHTML).style.display = "block";
+            }
+        }
+        function unselect(t) {
+
+            if (t != null) {
+                t.style.borderTop = "1px solid gray";
+                t.style.borderBottom = "2px solid brown";
+                document.getElementById(t.innerHTML).style.display = "none";
+            }
+        }
+
+
+    </script>
+
+
+</head>
+
+<body onload="init()">
+
+<!-- HTML页面布局 -->
+
+<div class="tag" id="dft" style="cursor:pointer" onclick="tagclick(this)">房产</div>
+
+<div class="tag" style="cursor:pointer" onclick="tagclick(this)">家居</div>
+
+<div class="tag" style="cursor:pointer" onclick="tagclick(this)">二手房</div>
+
+
+<div id="content"></div>
+
+
+</body>
+
+</html>
+

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <script src="js/jquery.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#pp").click(function () {
+                document.getElementById("pp").innerHTML = "It had changed.";
+            });
+            $("#ppp").click(function () {
+                $("#ppp").html("changed!");
+            });
+        });
+    </script>
+</head>
+<body>
+<p>根据所学，测试简单jQuery使用</p>
+<p id="pp">点击改变文字内容</p>
+<p id="ppp">点击改变文字内容</p>
+
+</body>
+</html>

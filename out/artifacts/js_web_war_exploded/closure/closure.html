@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- 闭包 -->
+<head>
+    <script type="text/javascript">
+        function showHelp(help) {
+            document.getElementById('help').innerHTML = help;
+        }
+
+        function makeHelpCallback(help) {
+            return function() {
+                showHelp(help);
+            };
+        }
+
+        function setupHelp() {
+            var helpText = [
+                {'id': 'email', 'help': 'Your e-mail address'},
+                {'id': 'name', 'help': 'Your full name'},
+                {'id': 'age', 'help': 'Your age (you must be over 16)'}
+            ];
+
+            for (var i = 0; i < helpText.length; i++) {
+                var item = helpText[i];
+                document.getElementById(item.id).onfocus = makeHelpCallback(item.help);
+            }
+        }
+
+        setupHelp();
+
+        /**
+         * 通过闭包调用内联函数
+         * @returns {f1}
+         */
+        // function f() {
+        //     var n = 999;
+        //
+        //     function f1() {
+        //         alert(n += 1);
+        //     }
+        //
+        //     return f1;
+        // }
+        //
+        // var result = f();
+        // result(); // 1000
+        // result(); // 1001
+        // result(); // 1002
+
+        /**
+         * 在外部调用result函数，可以不断怎家内部的n值，实际上函数f1中的局部变量n一直保存在内存中，
+         * 并没有在f1调用后被自动清除
+         *
+         * 原因: f1是f2的父函数，而f2被赋给了一个全局变量，这导致f2始终在内存中，而f2的存在依赖于f1，
+         * 因此f1也始终在内存中，不会在调用结束后，被垃圾回收机制（garbage collection）回收
+         * @returns {f2}
+         */
+        // function f1() {
+        //     var n = 999;
+        //
+        //     function f2() {
+        //         alert(n++);
+        //     }
+        //
+        //     return f2;
+        // }
+        //
+        // result = f1();
+        // result(); // 999
+        // nAdd();
+        // result(); // 1000
+    </script>
+</head>
+<body>
+<form>
+
+</form>
+</body>
+</html>

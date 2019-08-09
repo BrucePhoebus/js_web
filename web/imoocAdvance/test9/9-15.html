@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>认识DOM-style样式</title>
+</head>
+<body>
+<div><b id="oldnode">JavaScript</b>是一个很常用的技术，为网页添加动态效果。</div>
+<a href="javascript:replaceMessage()"> 将加粗改为斜体</a>
+
+<script type="text/javascript">
+    /**
+     * 替换元素节点replaceChild()
+     * replaceChild 实现子节点(对象)的替换。返回被替换对象的引用
+     * @type {NodeListOf<HTMLElement>}
+     */
+    function replaceMessage(){
+        var oldNode = document.getElementById("oldnode");
+        var newNode = document.createElement("i");
+        newNode.innerHTML = oldNode.innerHTML;
+        oldNode.parentNode.replaceChild(newNode, oldNode);
+    }
+</script>
+</body>
+</html>

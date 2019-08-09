@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <script type="text/javascript">
+        function add2() {
+            var numa, numb, sum;
+            numa = 6;
+            numb = 8;
+            sum = numa + numb;
+            document.write("两数和为:" + sum);
+        }
+    </script>
+    <script type="text/javascript">
+        function openwin() {
+            window.open('http://www.imooc.com', '_blank', 'height=600,width=400,top=100,toolbar=no,left=0,menubar=no,scrollbars=no,status=no');
+        }
+    </script>
+</head>
+<body>
+<form>
+    <input name="button" type="button" value="点击提交" onclick="add2()"/>
+    <form onclick="openwin()">
+        <input name="点击我" type="button" value="点击我"/>
+    </form>
+</form>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="http://unpkg.com/vue"></script>
+    <title>语法模版</title>
+</head>
+<body id="body">
+<span id="msg">Message: {{ msg }}</span>
+<!--纯html-->
+<div v-html="rawHtml">这是纯html</div>
+<!--javascript表达式-->
+<a v-bind:href="url">这是url</a>
+<!--修饰符-->
+<form v-on:submit.prevent="onSubmit"></form>
+<!--计算属性-->
+<div id="example">
+    <p>Original message: "{{ message }}"</p>
+    <p>Computed reversed message: "{{ reversedMessage }}"</p>
+</div>
+
+<div v-bind:class="{ active: isActive }">v-bind的style绑定</div>
+<!--条件渲染-->
+<div v-if="Math.random() > 0.5">
+    Now you see me
+</div>
+<div v-else>
+    Now you don't
+</div>
+<!--列表渲染-->
+<ul id="example-1">
+    <li v-for="item in items">
+        {{ item.message }}
+    </li>
+</ul>
+
+
+<script>
+    var example1 = new Vue({
+        el: '#example-1',
+        data: {
+            items: [
+                {message: 'Foo'},
+                {message: 'Bar'}
+            ]
+        }
+    })
+
+    /*var vm = new Vue({
+        el: '#example',
+        data: {
+            message: 'Hello',
+            styleObject: {
+                color: 'red',
+                fontSize: '13px'
+            }
+        },
+        computed: {
+            // a computed getter
+            reversedMessage: function () {
+                // `this` points to the vm instance
+                return this.message.split('').reverse().join('')
+            }
+        }
+    })*/
+
+    /*new Vue({
+        el: '#example',
+        data: {
+            msg: '这是msg',
+            message: '这是massage',
+            reversedMessage: '这是reversedMessage'
+        },
+        //过滤器
+        filters: {
+            capitalize: function (value) {
+                if (!value) return ''
+                value = value.toString()
+                return value.charAt(0).toUpperCase() + value.slice(1)
+            }
+        }
+    })*/
+</script>
+</body>
+</html>

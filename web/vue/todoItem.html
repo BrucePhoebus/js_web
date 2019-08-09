@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="http://unpkg.com/vue"></script>
+    <title>todoItem-组件化</title>
+</head>
+<body>
+<!--//使用该组件-->
+<ol id="olol">
+    <!-- 创建一个 todo-item 组件的实例 -->
+    <todo-item v-bind:todo="{text: 666}"></todo-item>
+    <!--缩写-->
+    <todo-item :todo="{text: 666}"></todo-item>
+</ol>
+
+<script>
+    //组件化
+    //定义名为todo-item的新组件
+    /*Vue.component('todo-item', {
+        template: '<li>这是待办事项</li>'
+    })*/
+    //组件改进
+    Vue.component('todo-item', {
+        /*
+            todo-item 组件现在接受一个
+            "prop"，类似于一个自定义属性
+            这个属性名为 todo。
+         */
+        props: ['todo'],
+        template: '<li>{{ todo.text }}</li>'
+    })
+
+    new Vue({
+        el: '#olol'
+    })
+
+
+</script>
+</body>
+</html>

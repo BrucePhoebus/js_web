@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>认识DOM-style样式</title>
+</head>
+<body>
+<ul id="test">
+    <li>JavaScript</li>
+    <li>HTML</li>
+</ul>
+<script type="text/javascript">
+    /**
+     * 插入节点insertBefore()
+     * insertBefore() 方法可在已有的子节点前插入一个新的子节点
+     * @type {NodeListOf<HTMLElement>}
+     */
+    var otest = document.getElementById("test");
+    var newLi = document.createElement("li");
+    newLi.innerHTML = "php";
+    otest.insertBefore(newLi, otest.childNodes[2]);
+</script>
+</body>
+</html>

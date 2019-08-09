@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>window对象-计时器</title>
+    <script type="text/javascript">
+        /**
+         * JavaScript 计时器
+         * 取消计时器clearTimeout()
+         */
+        var num = 0, i;
+
+        function timedCount() {
+            document.getElementById('txt').value = num;
+            num = num + 1;
+            i = setTimeout(timedCount, 1000);
+        }
+
+        setTimeout(timedCount, 1000);
+
+        function stopCount() {
+            clearTimeout(i);
+        }
+
+        function startCount(){
+            document.getElementById('count').value=num;
+            num=num+1;
+            i=setTimeout("startCount()",1000);
+        }
+        function stopCount(){
+            clearTimeout(i);
+        }
+    </script>
+</head>
+<body>
+<form>
+    <input type="text" id="txt">
+    <input type="button" value="Stop" onClick="stopCount()">
+</form>
+
+<form>
+    <input type="text" id="count" />
+    <input type="button" value="Start" onclick="startCount()" />
+    <input type="button" value="Stop" onclick="staopCount()"  />
+</form>
+</body>
+</html>

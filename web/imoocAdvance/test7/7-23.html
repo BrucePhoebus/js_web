@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>编程练习</title>
+    <script type="text/javascript">
+        /**
+         * 编程练习
+         * 某班的成绩出来了，现在老师要把班级的成绩打印出来。
+         * 效果图:XXXX年XX月X日 星期X--班级总分为:81
+         * 格式要求：
+         * 1、显示打印的日期。 格式为类似“XXXX年XX月XX日 星期X” 的当前的时间。
+         * 2、计算出该班级的平均分（保留整数）。
+         * 同学成绩数据如下：
+         * "小明:87; 小花:81; 小红:97; 小天:76;小张:74;小小:94;小西:90;小伍:76;小迪:64;小曼:76"
+         * @type {number}
+         */
+            //通过javascript的日期对象来得到当前的日期，并输出。
+        var myDate = new Date();
+        var year = myDate.getFullYear();
+        var month = myDate.getMonth();
+        var day = myDate.getDate();
+        document.write(year + "年" + month + "月" + day + "日" + "&nbsp");
+        //计算当前是星期几
+        var weekDay = ["星期天", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+        /**
+         *
+         var week = parseInt(myDate.getDay());
+         var weekDay = "";
+         if(week == 0){
+            weekDay = "星期日";
+        }else{
+            weekDay = "星期" + week;
+        }
+         */
+        /**var week = myDate.getDay();
+         var weekDay = "";
+         switch (week) {
+            case 0:
+                weekDay = "星期日";
+                break;
+            case 1:
+                weekDay = "星期一";
+                break;
+            case 2:
+                weekDay = "星期二";
+                break;
+            case 3:
+                weekDay = "星期三";
+                break;
+            case 4:
+                weekDay = "星期四";
+                break;
+            case 5:
+                weekDay = "星期五";
+                break;
+            case 6:
+                weekDay = "星期六";
+                break;
+        }*/
+            //成绩是一长窜的字符串不好处理，找规律后分割放到数组里更好操作哦
+        var scoreStr = "小明:87;小花:81;小红:97;小天:76;小张:74;小小:94;小西:90;小伍:76;小迪:64;小曼:76";
+        var scoreArray = scoreStr.split(";");
+        var sum = 0;
+        /*for(var x in scoreArray){
+            sum += parseInt(scoreArray[x].substr(scoreArray[i].indexOf(":")+1));//截取从第i位置开始截取字符串这个函数
+        }*/
+        for (var x in scoreArray) {
+            sum += parseInt(scoreArray[x].substr((scoreArray[x].indexOf(":") + 1), 2));
+        }
+        //从数组中将成绩撮出来，然后求和取整，并输出。
+        document.write(weekDay[myDate.getDay()] + "--班级总分为:" + sum);
+    </script>
+</head>
+<body>
+</body>
+</html>

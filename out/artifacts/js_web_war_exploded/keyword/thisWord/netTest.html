@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- this关键字 -->
+<head>
+    <script type="text/javascript">
+        /**
+         * 全局代码中的this
+         */
+        // 显示定义全局对象的属性
+        this.a = 10; // global.a = 10
+        alert(a); // 10
+
+        // 通过赋值给一个无标示符隐式
+        b = 20;
+        alert(this.b); // 20
+
+        // 也是通过变量声明隐式声明的
+        // 因为全局上下文的变量对象是全局对象自身
+        var c = 30;
+        alert(this.c); // 30
+
+        /**
+         * 函数代码中的this
+         */
+        var foo = {x: 10};
+
+        var bar = {
+            x: 20,
+            test: function () {
+
+                alert(this === bar); // true
+                alert(this.x); // 20
+
+                // this = foo; // 错误，任何时候不能改变this的值
+
+                alert(this.x); // 如果不出错的话，应该是10，而不是20
+
+            }
+
+        };
+
+        // 在进入上下文的时候
+        // this被当成bar对象
+        // determined as "bar" object; why so - will
+        // be discussed below in detail
+
+        bar.test(); // true, 20
+
+        foo.test = bar.test;
+
+        // 不过，这里this依然不会是foo
+        // 尽管调用的是相同的function
+
+        foo.test(); // false, 10
+
+    </script>
+</head>
+<body>
+<form>
+
+</form>
+</body>
+</html>

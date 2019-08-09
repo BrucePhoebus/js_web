@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 代理data属性
+    var data1 = { a: 1 }
+    var vm = new Vue({
+        data: data1
+    })
+
+    /*构造器
+    每个vue.js通过vue创建实例*/
+    /*var vm = new Vue({
+        // 选项
+    })*/
+
+    var MyComponent = Vue.extend({
+        // 扩展选项
+    })
+    // 所有的 `MyComponent` 实例都将以预定义的扩展选项被创建
+    var myComponentInstance = new MyComponent()
+</script>
+</html>

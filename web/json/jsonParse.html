@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+<h2>字符串转换为函数</h2>
+<p id="demo"></p>
+<script>
+    var text = '{ "name":"Runoob", "alexa":"function () {return 10000;}", "site":"www.runoob.com"}';
+    var obj = JSON.parse(text);
+    obj.alexa = eval("(" + obj.alexa + ")");
+    document.getElementById("demo").innerHTML = obj.name + " Alexa 排名：" + obj.alexa();
+</script>
+
+<!--<h2>字符串转换为 Date 对象&#45;&#45;启用 JSON.parse 的第二个参数 reviver，一个转换结果的函数，对象的每个成员调用此函数</h2>
+<p id="demo"></p>
+<script>
+    var text = '{ "name":"Runoob", "initDate":"2013-12-14", "site":"www.runoob.com"}';
+    var obj = JSON.parse(text, function (key, value) {
+        if (key == "initDate") {
+            return new Date(value);
+        } else {
+            return value;
+        }});
+    document.getElementById("demo").innerHTML = obj.name + "创建日期：" + obj.initDate;
+</script>-->
+
+<!--<h2>将字符串转换为 Date 对象。</h2>
+<p id="demo"></p>
+<script>
+    var text = '{ "name":"Runoob", "initDate":"2013-12-14", "site":"www.runoob.com"}';
+    var obj = JSON.parse(text);
+    obj.initDate = new Date(obj.initDate);
+    document.getElementById("demo").innerHTML = obj.name + "创建日期: " + obj.initDate;
+</script>-->
+
+<!--<h2>使用 XMLHttpRequest 来获取文件内容</h2>
+<p>文件内容是标准的 JSON 格式，可以使用 JSON.parse 方法将其转换为 JavaScript 对象。</p>
+<p id="demo"></p>
+<script>
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            myObj = JSON.parse(this.responseText);
+            document.getElementById("demo").innerHTML = myObj.name;
+        }
+    };
+    xmlhttp.open("GET", "/js_web/web/json/json_demo.txt", true);
+    xmlhttp.send();
+</script>
+<p>查看 JSON 文件数据 <a href="/js_web/web/json/json_demo.txt" target="_blank">json_demo.txt</a></p>-->
+
+
+<!--<h2>从 JSON 对象中创建 JavaScript 对象</h2>
+<p id="demo"></p>
+<script>
+    var obj = JSON.parse('{ "name":"runoob", "alexa":10000, "site":"www.runoob.com" }');
+    document.getElementById("demo").innerHTML = obj.name + "：" + obj.site;
+</script>-->
+</body>
+</html>
